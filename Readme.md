@@ -8,4 +8,7 @@
 ---
 ## 문제 풀이
 ---
-4. [Q4-커리큘럼 풀이 정리](https://github.com/20190511/GraphAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC%20%ED%92%80%EC%9D%B4%20%EC%A0%95%EB%A6%AC.pdf)
+1. [Q1-팀결성.py](https://github.com/20190511/GraphAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/Q2-%ED%8C%80%EA%B2%B0%EC%84%B1.py)
+2. [Q2-도시분할계획.py](https://github.com/20190511/GraphAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/Q3-%EB%8F%84%EC%8B%9C%EB%B6%84%ED%95%A0%EA%B3%84%ED%9A%8D.py)
+3. [Q3-커리큘럼.py](https://github.com/20190511/GraphAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/Q3-%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC.py)
+4. [Q3-커리큘럼 풀이 정리](https://github.com/20190511/GraphAlgorithm/blob/main/%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4/%EC%BB%A4%EB%A6%AC%ED%81%98%EB%9F%BC%20%ED%92%80%EC%9D%B4%20%EC%A0%95%EB%A6%AC.pdf)
