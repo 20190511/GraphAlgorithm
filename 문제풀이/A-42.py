@@ -1,5 +1,5 @@
 """
-문제 42. 탑승구
+문제
 공항에는 G개의 탑승구가 있으며, 각각의 탑승구는 1번부터 G번까지의 번호로 구분됩니다.
 공항에는 P개의 비행기가 차례대로 도착할 예정이며, i번째 비행기를 1번부터 gi번째 (1 <= gi <= G) 탑승구 중 하나에 영구적으로 도킹해야 합니다.
 이때, 다른 비행기가 도킹하지 않은 탑승구에만 도킹할 수 있습니다.
@@ -27,21 +27,32 @@
 [OUTPUT]
 2
 
-[문제 풀이 및 피드백]
-:서로소 집합 알고리즘을 이용하면 계속 들어오는 입력값이 리스트에 존재하는지의 여부를
-빠르게 확인할 수 있다.
+[INPUT 2]
+4
+6
+2
+2
+3
+3
+4
+4
 
+[OUTPUT 2]
+3
+
+
+[문제 풀이 및 피드백]
+1.서로소 집합 알고리즘을 이용하면 계속 들어오는 입력값이 리스트에 존재하는지의 여부를
+빠르게 확인할 수 있다.
 (리스트에서 find() 보다 빠름.)
 
+2. 문제에서 p의 입력이 1~p까지의 공항을 의미하였는데 잘못이해하고 풀었다.
+    입력조건을 제대로 확인하자.
 
 [피드백 2]
-나는 공항에 들어오는 비행기 도킹 입구값을 계속해서 union하여 다음 비행기가 도착했을 때,
-서로소인지 아닌지 판별하여 풀었지만,
-
-더 논리적으로
-0번 포트를 하나 생성해둬서, 들어올 때마다 
-    서로소가 아니면 break 하고 result 출력
-    서로소라면 0번포트와 union하여 풀 수도 있다.
+p의 값을 우선적으로 도킹할 수 있는 포트의 큰 숫자부터 도킹을 시도하면 된다.
+    -> 그래서 find(par,pList[i]) 를 활용하여 루트가 0번이 될때까지 시도하면된다.
+        만약 도킹이 된다면 find(par,root,root-1)를 하여 도킹을 계속해주자.
 """
 import sys
 input=sys.stdin.readline
@@ -63,13 +74,14 @@ pList = []
 par = [i for i in range(g+1)]
 for i in range(p):
     pList.append(int(input()))
-result = 1
 
-for i in range(1,p):
-    if find(par, pList[i-1]) != find(par,pList[i]):
-        result += 1 
-        union(par,pList[i-1],pList[i])
-    else:
+result = 0
+for i in range(p):
+    root = find(par,pList[i])
+    if root == 0:
         break
+    else:
+        result += 1 
+        union(par,root,root-1)
 print(result)
         
